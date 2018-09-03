@@ -1,0 +1,40 @@
+choice=""
+yrs=0
+yrs1=0
+options=["C","D"]
+for x in range(0,50):
+#while True:
+    #stop=input("Prisoner's Dillema. Type E to stop or W to keep going. ")
+    #if choice == "C":
+        #choice1 = "C"
+    #elif choice == "D":
+        #choice1 = "D"
+    #else:
+        #choice1 = random.choice(options)
+        #choice1 = "C"
+    choice1 = "D"
+    choice=random.choice(options)
+    print (choice+","+choice1)
+    
+    #if stop == "E":
+        #break
+    if choice == "C" and choice1 == "C":
+        yrs = yrs+1
+        yrs1 = yrs1+1
+    elif choice == "C" and choice1 =="D":
+        yrs = yrs+3
+    elif choice == "D" and choice1=="C":
+        yrs1 = yrs+3
+    elif choice == "D" and choice1 == "D":
+        yrs = yrs+2
+        yrs1 = yrs1+2
+
+
+
+print("You served " + str(yrs) + " years in jail.")
+print ("The computer served " + str(yrs1) + " years in jail.")
+
+#always coop is 24 and 17
+#always defect is 124 and 52
+#always good until they are bad is always equal 75 and 75
+

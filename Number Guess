@@ -1,0 +1,17 @@
+import random
+random = random.randint(1,1000)
+
+for x in range(0, 29):
+    number = input("pick a number from 1-1,000. You only get 30 guesses. ")
+    if number.isdigit() and int(number)>= 1 and int(number)<= 1000:
+    
+        if int(number)< random:
+            print ("too low")
+        elif int(number)> random:
+            print("too high")
+        else: 
+            print ("congratulations you got it.")
+            quit() 
+        
+    
+print ("wow you suck that took you too long ")

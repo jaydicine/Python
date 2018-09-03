@@ -1,0 +1,21 @@
+import random
+
+original=input("please input a word: ")
+wl=len(original)
+original_list=[]
+scramble_str=""
+
+if wl > 0  :
+    for x in range(0,wl):
+        original_list.append(original[x])
+
+    random.shuffle(original_list)
+    for x in range(0,wl):
+        #print(original_list)
+        scramble_str=scramble_str+original_list[x]
+        
+    print (scramble_str)
+    
+else:
+    print("Your word is too short or too long.")
+

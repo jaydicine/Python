@@ -1,0 +1,35 @@
+
+nums = []
+full = []
+while True:
+    n=input("List numbers you would like to sort. after each number, press enter to list next number and once you are done, press X to sort ")
+    if n.isdigit()== True:
+        nums.append(n)
+    elif n ==("X"):
+        break
+ 
+        
+        
+#print(nums)        
+
+k= len(nums)-1
+nums = [ int(x) for x in nums ]
+for n in range (0,len(nums)):
+    tbc=nums[0]
+    tbcc = 0
+    for i in range (0,k):
+        
+        if tbc <= nums[i+1]:
+            tbc = tbc
+            tbcc = tbcc+1
+        else:
+             tbc = nums [i+1]        
+
+    k=k-1
+
+    nums.remove(tbc)
+    
+    full.append(tbc)
+print("your numbers sorted from least to greatest is:")
+for x in full:
+    print (x)

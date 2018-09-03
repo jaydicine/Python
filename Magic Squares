@@ -1,0 +1,51 @@
+import os
+abc = open('/Users/jeffm/magic.txt')
+magic = abc.readlines()
+while len(magic)>=4:
+    line = []
+    empty = []
+    for w in range (0,4):
+        magic[w] = magic[w].rstrip("\n")
+
+    for q in range(0,4):
+        square = magic[q]
+        nums = square.split()
+        line.append(nums)
+        #print (nums)
+
+    columns=[]
+    for x in range(0,4):
+        c = int(line[0][x]) + int(line[1][x]) + int(line[2][x]) + int(line[3][x])
+        columns.append(c)
+        
+    c1, c2, c3, c4=columns
+
+
+    if c1==c2==c3==c4:
+        result1 = "True"
+        #print("True")
+    else:
+        result1 = "false"
+        #print("false")
+
+    rows=[]
+    for x in range(0,4):
+        r = int(line[x][0]) + int(line[x][1]) + int(line[x][2]) + int(line[x][3])
+        rows.append(r)
+    r1,r2,r3,r4=rows
+
+
+    if r1==r2==r3==r4:
+        result = "True"
+        #print("True")
+    else:
+        result = "false"
+        #print("false")
+
+    if result == result1 == "True":
+        print ("magic")
+    else:
+        print ("not magic")
+    del magic[0:4]
+
+

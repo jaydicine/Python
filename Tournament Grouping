@@ -1,0 +1,28 @@
+wins = 0
+losses = 0
+results = []
+
+#for x in range (0,6):
+result = input("What were the game results? ")
+    #results.append(result)
+
+results = list(result)
+
+while True:
+    if "W" in results:
+        wins = wins + 1
+        results.remove("W")
+    else:
+        break
+losses = 6-wins
+
+
+
+if wins ==  5 or wins == 6:
+    print("The player is in group 1")
+elif wins == 3 or wins == 4:
+    print("The player is in group 2")
+elif wins == 1 or wins == 2:
+    print("The player is in group 3")
+else:
+    print("-1")

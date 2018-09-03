@@ -1,0 +1,14 @@
+nmb = input("PLease enter a number ")
+
+if nmb.isdigit(): #and int(nmb)>1 
+    total=0
+    #print ("Is digit.")
+    for x in range(0, int(nmb)):
+
+        total=total+x+1
+        
+    print ("the sum of numbers from 1 to " + nmb + " = " + str(total))
+       
+else:   
+    print("no")
+

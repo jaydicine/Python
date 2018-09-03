@@ -1,0 +1,20 @@
+nmb = input("PLease enter a number ")
+
+if nmb.isdigit()  and int(nmb)>1 :
+    n=int(nmb)
+    total=0
+    if n %2==0:
+        z=0
+        q="even"
+    else:
+        z=1
+        q="odd"
+    for x in range(z, n+1,2):
+        #print (x)
+        total=total+x
+        
+    print ("the sum of the "+ q + " numbers from 1 to " + nmb + " = " + str(total))
+       
+else:
+    
+    print("no")

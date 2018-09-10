@@ -1,0 +1,22 @@
+user = input("Enter a word. ")
+thingy = False
+def isPalindrome(word):
+    backward = []
+    foward = list(word)
+    for x in range(0,len(foward)):
+        backward.append(foward[-x-1])
+    if foward == backward:
+        return True
+    else:
+        return False
+
+for i in range(0,len(user)):
+    l_window=len(user)-i
+    for j in range(0,i+1):
+        if isPalindrome(user[j:l_window+j]):
+            print("The hidden palindrome was " + user[j:l_window+j])
+            print("it was " + str(l_window) + " long.")
+            thingy = True
+            break
+    if thingy:
+        break

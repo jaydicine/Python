@@ -1,0 +1,19 @@
+stuff={'arrow':'15','turkeys':'4','human heads':'1','gold coins':'34'}
+values=[]
+keys=[]
+
+
+def displayInventory(inventory):
+    total=0
+    for x in inventory.values():
+        values.append(x)
+    for i in inventory.keys():
+        keys.append(i)
+    print('Inventory:'+"\n")
+    for k,v in inventory.items():
+        print (v + ' ' + k +"\n")
+    for n in inventory.values():
+        total = total+int(n)
+    print ('Total Items:' + str(total))
+
+displayInventory(stuff)

@@ -1,0 +1,16 @@
+distance=0
+time = input("what time ").split(":")
+time=int(time[0]) * 60 + int(time[1])
+
+while distance<240:
+    if time >= 420 and time < 600 or time >= 900 and time < 1140:
+        distance = distance+1
+    else:
+        distance = distance+2
+    time = time+1
+
+fin = (str(time//60)) + ":" + (str(time%60))
+if len(str(time%60)) < 2:
+    time =time = (str(time//60)) + ":" + (str(time%60))+"0"
+else:
+    print(fin)

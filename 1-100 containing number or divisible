@@ -1,0 +1,9 @@
+x = input("what number ")
+
+for i in range(0,100):
+    if str(x) in str(i):
+        print(i)
+    elif i%int(x)==0:
+        print(i)
+    
+        

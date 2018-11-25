@@ -1,0 +1,12 @@
+digits = input("What are the last four digits? ")
+last4=list(digits)
+if int(last4[0])== 8 or int(last4[0])== 9:
+    if int(last4[1]) == int(last4[2]):
+        if int(last4[3])== 8 or int(last4[3]) == 9:
+               print("ignore")
+        else:
+            print("answer")
+    else:
+        print("answer")
+else:
+    print("answer")

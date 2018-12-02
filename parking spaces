@@ -1,0 +1,13 @@
+spaces=input("number of parking spaces ")
+yesterday=input("what were the spaces yesterday? ")
+today=input("what were the spaces today? ")
+yesterdayl=list(yesterday)
+todayl=list(today)
+count=0
+for x in range(0,int(spaces)):
+    if yesterdayl[x]==todayl[x]and yesterdayl[x]=='C':
+        count = count+1
+    else:
+        count=count
+print(count)
+

@@ -1,0 +1,51 @@
+#l = input("What are the letters ")
+#letters = list(l)
+
+count=0
+letters=['a','b','c','d','e','f']
+z=len(letters)
+
+# Three letter words
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    print(letters[i]+letters[j]+letters[k])
+# Four letter words
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            print(letters[i]+letters[j]+letters[k]+letters[l])
+                            
+
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            for m in range(0,z):
+                                if m!=l and m!=k and m!=j and m!=i:
+                                    print(letters[i]+letters[j]+letters[k]+letters[l]+letters[m])
+                                    
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            for m in range(0,z):
+                                if m!=l and m!=k and m!=j and m!=i:
+                                    for n in range(0,z):
+                                        if n!=m and n!=l and n!=k and n!=j and n!=i:
+                                            print(letters[i]+letters[j]+letters[k]+letters[l]+letters[m]+letters[n])
+                                            count+=1
+print(count)
+

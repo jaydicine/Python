@@ -1,0 +1,19 @@
+import random
+count = 0
+x = random.uniform(0,1)
+y = random.uniform(0,1)
+runs=10000000
+for i in range(0,runs):
+    x = random.uniform(0,1)
+    y = random.uniform(0,1)
+    #z = str(x)+" " +str(y)
+    #print (z)
+    #print (x*x)
+    #print(y*y)
+    #print (x*x + y*y)
+    if (x*x + y*y) <= 1:
+        count=count+1
+   
+#print(count)
+print(count*4/runs)
+    

@@ -1,0 +1,17 @@
+triangles=0
+attempts=0
+p=57
+
+for i in range(0,int(p/3)):
+    for j in range (i+1, int(p/2)):
+        k = p-(i+j)
+        attempts+=1
+        if k > j and j+i > k:
+            triangles+=1
+            print(i,j,k)
+
+print(triangles)
+print(attempts)
+    
+
+

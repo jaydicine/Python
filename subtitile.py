@@ -1,5 +1,5 @@
-spanish = open('C:\\Users\\jeffm\\Downloads\\pythonsubspa.txt' , 'r')
-english = open('C:\\Users\\jeffm\\Downloads\\pythonsubeng.txt' , 'r')
+spanish = open('D:\\temp\casapapelspa.txt' , 'r')
+english = open('D:\\temp\casapapeleng.txt' , 'r')
 scontent = spanish.readlines()
 econtent = english.readlines()
 englines = []
@@ -85,47 +85,39 @@ n=0
 
 s=0
 e=0
-time=[]
-if len(spatime)>len(engtime):
-    time=spatime
+
+b=0
+
+if len(engsplit)>len(spasplit):
+    b=len(spasplit)
 else:
-    time=engtime
-
-
-    
-for i in range(0,len(time)+19):
-    spa0=spasplit[s][0]
-    eng0=engsplit[e][0]
-    spa1=spasplit[s][1]
-    eng1=engsplit[e][1]
-    if spa0<eng0 and spa1<eng0:
-        ntime0=spa0
-        ntime1=spa1
-        ntime0=ntime0[:2]+':'+ntime0[2:]
-        ntime0=ntime0[:5]+':'+ntime0[5:]
-        ntime0=ntime0[:8]+':'+ntime0[8:]
-        ntime1=ntime1[:2]+':'+ntime1[2:]
-        ntime1=ntime1[:5]+':'+ntime1[5:]
-        ntime1=ntime1[:8]+':'+ntime1[8:]
-        output=output+'\n'+ntime0+' --> '+ntime1+'\n'+spaword[s]
-        s+=1
-        
-    elif eng0<spa0 and eng1<spa0:
-        ntime0=eng0
-        ntime1=eng1
-        ntime0=ntime0[:2]+':'+ntime0[2:]
-        ntime0=ntime0[:5]+':'+ntime0[5:]
-        ntime0=ntime0[:8]+':'+ntime0[8:]
-        ntime1=ntime1[:2]+':'+ntime1[2:]
-        ntime1=ntime1[:5]+':'+ntime1[5:]
-        ntime1=ntime1[:8]+':'+ntime1[8:]
-        output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]
-        e+=1
-        
+    b=len(engsplit)
+print(b)
+while True:
+    #print(s)
+    if s==b:
+        print('done')
+        break
     else:
-        if eng0<spa0 and eng1==spa1 and eng0==0 is False:
-            e+=1
-            s+=1
+        
+        spa0=spasplit[s][0]
+        eng0=engsplit[e][0]
+        spa1=spasplit[s][1]
+        eng1=engsplit[e][1]
+        if spa0<eng0 and spa1<eng0:
+            ntime0=spa0
+            ntime1=spa1
+            ntime0=ntime0[:2]+':'+ntime0[2:]
+            ntime0=ntime0[:5]+':'+ntime0[5:]
+            ntime0=ntime0[:8]+':'+ntime0[8:]
+            ntime1=ntime1[:2]+':'+ntime1[2:]
+            ntime1=ntime1[:5]+':'+ntime1[5:]
+            ntime1=ntime1[:8]+':'+ntime1[8:]
+            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+spaword[s]
+            if s < len(spasplit):
+                s+=1
+            
+        elif eng0<spa0 and eng1<spa0:
             ntime0=eng0
             ntime1=eng1
             ntime0=ntime0[:2]+':'+ntime0[2:]
@@ -134,53 +126,69 @@ for i in range(0,len(time)+19):
             ntime1=ntime1[:2]+':'+ntime1[2:]
             ntime1=ntime1[:5]+':'+ntime1[5:]
             ntime1=ntime1[:8]+':'+ntime1[8:]
-            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
-        elif spa0<eng0 and spa1>=eng0:
-            e+=1
-            eng0=engsplit[e+1][0]
-            eng1=engsplit[e+1][1]
-            if spa0<eng0 and spa1<eng0:
-                s+=1
-            else:
-                break
-        elif eng0<spa0 and eng1>=spa0:
-            ntime0=eng0
-            ntime1=eng1
-            ntime0=ntime0[:2]+':'+ntime0[2:]
-            ntime0=ntime0[:5]+':'+ntime0[5:]
-            ntime0=ntime0[:8]+':'+ntime0[8:]
-            ntime1=ntime1[:2]+':'+ntime1[2:]
-            ntime1=ntime1[:5]+':'+ntime1[5:]
-            ntime1=ntime1[:8]+':'+ntime1[8:]    
-            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
-            s+=1
-            spa0=spasplit[s+1][0]
-            spa1=spasplit[s+1][1]
-            
-            while True:
-                if eng0<=spa0 and eng1<=spa0:
-                    
-                    e+=1
-                    break
-                else:
-                    s+=1
-                    break
-                
-   
-            
-                
-        else:
-            ntime0=eng0
-            ntime1=eng1
-            ntime0=ntime0[:2]+':'+ntime0[2:]
-            ntime0=ntime0[:5]+':'+ntime0[5:]
-            ntime0=ntime0[:8]+':'+ntime0[8:]
-            output=output+'\n'+eng0+'\n'+eng1+'\n'+engword[e]+'\n'+spaword[s]
-            if spa1<eng1:
-                s+=1
-            else:
+            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]
+            if e < len(engsplit):
                 e+=1
-    
+            
+        else:
+            if eng0<spa0 and eng1==spa1 and eng0==0 is False:
+                e+=1
+                s+=1
+                ntime0=eng0
+                ntime1=eng1
+                ntime0=ntime0[:2]+':'+ntime0[2:]
+                ntime0=ntime0[:5]+':'+ntime0[5:]
+                ntime0=ntime0[:8]+':'+ntime0[8:]
+                ntime1=ntime1[:2]+':'+ntime1[2:]
+                ntime1=ntime1[:5]+':'+ntime1[5:]
+                ntime1=ntime1[:8]+':'+ntime1[8:]
+                output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
+            elif spa0<eng0 and spa1>=eng0:
+                e+=1
+                eng0=engsplit[e+1][0]
+                eng1=engsplit[e+1][1]
+                if spa0<eng0 and spa1<eng0:
+                    s+=1
+                else:
+                    break
+            elif eng0<spa0 and eng1>=spa0:
+                ntime0=eng0
+                ntime1=eng1
+                ntime0=ntime0[:2]+':'+ntime0[2:]
+                ntime0=ntime0[:5]+':'+ntime0[5:]
+                ntime0=ntime0[:8]+':'+ntime0[8:]
+                ntime1=ntime1[:2]+':'+ntime1[2:]
+                ntime1=ntime1[:5]+':'+ntime1[5:]
+                ntime1=ntime1[:8]+':'+ntime1[8:]    
+                output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
+                s+=1
+                spa0=spasplit[s+1][0]
+                spa1=spasplit[s+1][1]
+                
+                while True:
+                    if eng0<=spa0 and eng1<=spa0:
+                        
+                        e+=1
+                        break
+                    else:
+                        s+=1
+                        break
+                    
+       
+                
+                    
+            else:
+                ntime0=eng0
+                ntime1=eng1
+                ntime0=ntime0[:2]+':'+ntime0[2:]
+                ntime0=ntime0[:5]+':'+ntime0[5:]
+                ntime0=ntime0[:8]+':'+ntime0[8:]
+                output=output+'\n'+eng0+'\n'+eng1+'\n'+engword[e]+'\n'+spaword[s]
+                if spa1<eng1:
+                    s+=1
+                else:
+                    e+=1
+        
                 
             
 f= open('C:\\Users\\jeffm\\Downloads\\pythonsubengandspa.txt' , 'w')
@@ -189,20 +197,3 @@ f.write(output)
 print(output)
 
         
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    

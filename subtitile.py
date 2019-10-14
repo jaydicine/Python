@@ -93,6 +93,7 @@ if len(engsplit)>len(spasplit):
 else:
     b=len(engsplit)
 print(b)
+count=1
 while True:
     #print(s)
     if s==b:
@@ -109,11 +110,12 @@ while True:
             ntime1=spa1
             ntime0=ntime0[:2]+':'+ntime0[2:]
             ntime0=ntime0[:5]+':'+ntime0[5:]
-            ntime0=ntime0[:8]+':'+ntime0[8:]
+            ntime0=ntime0[:8]+','+ntime0[8:]
             ntime1=ntime1[:2]+':'+ntime1[2:]
             ntime1=ntime1[:5]+':'+ntime1[5:]
-            ntime1=ntime1[:8]+':'+ntime1[8:]
-            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+spaword[s]
+            ntime1=ntime1[:8]+','+ntime1[8:]
+            output=output+str(count)+'\n'+ntime0+' --> '+ntime1+'\n'+spaword[s]+'\n'+'\n'
+            count+=1
             if s < len(spasplit):
                 s+=1
             
@@ -122,11 +124,12 @@ while True:
             ntime1=eng1
             ntime0=ntime0[:2]+':'+ntime0[2:]
             ntime0=ntime0[:5]+':'+ntime0[5:]
-            ntime0=ntime0[:8]+':'+ntime0[8:]
+            ntime0=ntime0[:8]+','+ntime0[8:]
             ntime1=ntime1[:2]+':'+ntime1[2:]
             ntime1=ntime1[:5]+':'+ntime1[5:]
-            ntime1=ntime1[:8]+':'+ntime1[8:]
-            output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]
+            ntime1=ntime1[:8]+','+ntime1[8:]
+            output=output+str(count)+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+'\n'
+            count+=1
             if e < len(engsplit):
                 e+=1
             
@@ -138,11 +141,12 @@ while True:
                 ntime1=eng1
                 ntime0=ntime0[:2]+':'+ntime0[2:]
                 ntime0=ntime0[:5]+':'+ntime0[5:]
-                ntime0=ntime0[:8]+':'+ntime0[8:]
+                ntime0=ntime0[:8]+','+ntime0[8:]
                 ntime1=ntime1[:2]+':'+ntime1[2:]
                 ntime1=ntime1[:5]+':'+ntime1[5:]
-                ntime1=ntime1[:8]+':'+ntime1[8:]
-                output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
+                ntime1=ntime1[:8]+','+ntime1[8:]
+                output=output+str(count)+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]+'\n'+'\n'
+                count+=1
             elif spa0<eng0 and spa1>=eng0:
                 e+=1
                 eng0=engsplit[e+1][0]
@@ -156,11 +160,12 @@ while True:
                 ntime1=eng1
                 ntime0=ntime0[:2]+':'+ntime0[2:]
                 ntime0=ntime0[:5]+':'+ntime0[5:]
-                ntime0=ntime0[:8]+':'+ntime0[8:]
+                ntime0=ntime0[:8]+','+ntime0[8:]
                 ntime1=ntime1[:2]+':'+ntime1[2:]
                 ntime1=ntime1[:5]+':'+ntime1[5:]
-                ntime1=ntime1[:8]+':'+ntime1[8:]    
-                output=output+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]
+                ntime1=ntime1[:8]+','+ntime1[8:]    
+                output=output+str(count)+'\n'+ntime0+' --> '+ntime1+'\n'+engword[e]+'\n'+spaword[s]+'\n'+'\n'
+                count+=1
                 s+=1
                 spa0=spasplit[s+1][0]
                 spa1=spasplit[s+1][1]
@@ -182,8 +187,12 @@ while True:
                 ntime1=eng1
                 ntime0=ntime0[:2]+':'+ntime0[2:]
                 ntime0=ntime0[:5]+':'+ntime0[5:]
-                ntime0=ntime0[:8]+':'+ntime0[8:]
-                output=output+'\n'+eng0+'\n'+eng1+'\n'+engword[e]+'\n'+spaword[s]
+                ntime0=ntime0[:8]+','+ntime0[8:]
+                ntime1=ntime1[:2]+':'+ntime1[2:]
+                ntime1=ntime1[:5]+':'+ntime1[5:]
+                ntime1=ntime1[:8]+','+ntime1[8:] 
+                output=output+str(count)+'\n'+eng0+'\n'+eng1+'\n'+engword[e]+'\n'+spaword[s]+'\n'+'\n'
+                count+=1
                 if spa1<eng1:
                     s+=1
                 else:
@@ -191,9 +200,26 @@ while True:
         
                 
             
-f= open('C:\\Users\\jeffm\\Downloads\\pythonsubengandspa.txt' , 'w')
+f= open('D:\\temp\\pythonsubengandspa.srt' , 'w')
 f.write(output)
 
 print(output)
 
         
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

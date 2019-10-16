@@ -152,8 +152,20 @@ while True:
                 eng0=engsplit[e+1][0]
                 eng1=engsplit[e+1][1]
                 if spa0<eng0 and spa1<eng0:
+                    ntime0=spa0
+                    ntime1=spa1
+                    ntime0=ntime0[:2]+':'+ntime0[2:]
+                    ntime0=ntime0[:5]+':'+ntime0[5:]
+                    ntime0=ntime0[:8]+','+ntime0[8:]
+                    ntime1=ntime1[:2]+':'+ntime1[2:]
+                    ntime1=ntime1[:5]+':'+ntime1[5:]
+                    ntime1=ntime1[:8]+','+ntime1[8:]
+                    output=output+str(count)+'\n'+ntime0+' --> '+ntime1+'\n'+spaword[s]+'\n'+engword[e]+'\n'+'\n'
+                    count+=1
                     s+=1
+                    
                 else:
+                    
                     break
             elif eng0<spa0 and eng1>=spa0:
                 ntime0=eng0

@@ -1,0 +1,100 @@
+count2=0
+url = ''
+import requests
+
+url = "https://wordsapiv1.p.rapidapi.com/words/"
+
+headers = {
+    'x-rapidapi-host': "wordsapiv1.p.rapidapi.com",
+    'x-rapidapi-key': "cdf346d0a0msh09ddf6856a061d7p1c2615jsn640c2b4f16dd"
+    }
+
+l = input("What are the letters ")
+letters = list(l)
+
+count=0
+#letters=['a','b','c','d','e','f']
+z=len(letters)
+
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            count+=1
+            words=letters[i]+letters[j]
+            url="https://wordsapiv1.p.rapidapi.com/words/"+words
+            response = requests.request("GET", url, headers=headers)
+            if response.status_code == 200:
+                print (words)
+                count2+=1
+
+#Three Letter words
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    count+=1
+                    words=letters[i]+letters[j]+letters[k] 
+                    url="https://wordsapiv1.p.rapidapi.com/words/"+words
+                    response = requests.request("GET", url, headers=headers)
+                    if response.status_code == 200:
+                        print (words)
+                        count2+=1
+
+# Four letter words
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            count+=1
+                            words=letters[i]+letters[j]+letters[k]+letters[l] 
+                            url="https://wordsapiv1.p.rapidapi.com/words/"+words
+                            response = requests.request("GET", url, headers=headers)
+                            if response.status_code == 200:
+                                print (words)
+                                count2+=1
+                            
+
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            for m in range(0,z):
+                                if m!=l and m!=k and m!=j and m!=i:
+                                    count+=1
+                                    words=letters[i]+letters[j]+letters[k]+letters[l]+letters[m]
+                                    url="https://wordsapiv1.p.rapidapi.com/words/"+words
+                                    response = requests.request("GET", url, headers=headers)
+                                    if response.status_code == 200:
+                                        print (words)
+                                        count2+=1
+                                    
+for i in range(0,z):
+    for j in range(0,z):
+        if j != i:
+            for k in range(0,z):
+                if k != i and k != j:
+                    for l in range(0,z):
+                        if l!=k and l!=i and l!=j:
+                            for m in range(0,z):
+                                if m!=l and m!=k and m!=j and m!=i:
+                                    for n in range(0,z):
+                                        if n!=m and n!=l and n!=k and n!=j and n!=i:
+                                            count+=1
+                                            words=letters[i]+letters[j]+letters[k]+letters[l]+letters[m]+letters[n] 
+                                            url="https://wordsapiv1.p.rapidapi.com/words/"+words
+                                            response = requests.request("GET", url, headers=headers)
+                                            if response.status_code == 200:
+                                                print (words)
+                                                count2+=1
+print(count)
+
+                    
+
+
